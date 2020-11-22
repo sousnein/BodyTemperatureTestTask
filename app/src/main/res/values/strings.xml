@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">BodyTemperatureTestTask</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="my_temperature">My temperature</string>
+    <string name="inputHint">0</string>
+    <string name="my_logs">Logs</string>
+    <string name="txtDateLog">Ноябр. 21</string>
+    <string name="log_temperature">36.0</string>
+    <string name="btn_delete_log_item">Delete</string>
+    <string name="txtTimeLog">16:15</string>
+</resources>

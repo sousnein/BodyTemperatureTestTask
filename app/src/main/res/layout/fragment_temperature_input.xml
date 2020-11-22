@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/track_bacground_gradient"
+    tools:context=".ui.TemperatureInputFragment">
+
+    <TextView
+        android:id="@+id/txtMyTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/my_temperature"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/inputElementContainer"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/input_temperature_container_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.47000003">
+
+        <EditText
+            android:id="@+id/inputTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:background="@null"
+            android:gravity="fill_horizontal"
+            android:hint="@string/inputHint"
+            android:inputType="numberDecimal"
+            android:maxLength="5"
+            android:maxLines="1"
+            android:textColor="@color/purple"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="@id/inputElementContainer"
+            app:layout_constraintStart_toStartOf="@id/inputElementContainer"
+            app:layout_constraintTop_toTopOf="@id/inputElementContainer" />
+
+        <ImageView
+            android:id="@+id/imgTermometr"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:rotation="-45"
+            android:src="@drawable/ic_termometr"
+            app:layout_constraintEnd_toEndOf="@+id/inputTemperature"
+            app:layout_constraintStart_toStartOf="@+id/inputTemperature"
+            app:layout_constraintTop_toBottomOf="@+id/inputTemperature" />
+
+        <ImageView
+            android:id="@+id/imgAddTemperature"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/btn_add_background"
+            android:padding="10dp"
+            android:src="@drawable/ic_add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imgTermometr"
+            app:layout_constraintStart_toStartOf="@+id/imgTermometr"
+            app:layout_constraintTop_toBottomOf="@+id/imgTermometr" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
