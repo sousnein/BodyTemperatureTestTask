@@ -1,5 +1,6 @@
 package com.sousnein.bodytemperaturetesttask.ui
 
+import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +19,7 @@ class LogsFragment : BaseFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        hideKeyboard(activity as Activity)
         return inflater.inflate(R.layout.fragment_logs, container, false)
     }
 

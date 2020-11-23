@@ -22,12 +22,19 @@ class TemperatureInputFragment : BaseFragment() {
         return inflater.inflate(R.layout.fragment_temperature_input, container, false)
     }
 
+    override fun onStart() {
+        super.onStart()
+        println("start")
+        inputTemperature.requestFocus()
+        showKeyboard(inputTemperature,activity as Activity)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         imgAddTemperature.setOnClickListener {
             val input = inputTemperature.text.toString()
             if (input.isNotEmpty()) {
-                hideKeyboard(activity as Activity)
                 val date = DateUtil.getDate()
                 val time = DateUtil.getTime()
                 val temperature = input.toDouble()
@@ -44,5 +51,6 @@ class TemperatureInputFragment : BaseFragment() {
         }
 
     }
+
 
 }
