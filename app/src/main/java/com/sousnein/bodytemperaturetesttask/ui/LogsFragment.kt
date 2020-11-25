@@ -29,10 +29,17 @@ class LogsFragment : BaseFragment() {
         launch {
             context?.let {
                 val db = LogDatabase.invoke(it)
-                val logs = LogDatabase.invoke(it).getLogDao().getAllNotes()
+                val logs = db.getLogDao().getAllNotes()
+
                 logsRecyclerView.layoutManager = LinearLayoutManager(it)
                 logsRecyclerView.adapter = LogsRecyclerAdapter(logs as ArrayList<Log>, db)
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (!LOGS_LIST_IS_EMPTY)
+            txtYourLogsWillBeThere.visibility = View.GONE
     }
 }

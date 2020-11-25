@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/track_bacground_gradient"
+    android:background="@drawable/track_background_gradient"
     tools:context=".ui.TemperatureInputFragment">
 
     <TextView
@@ -52,14 +52,14 @@
             app:layout_constraintTop_toTopOf="@id/inputElementContainer" />
 
         <ImageView
-            android:id="@+id/imgTermometr"
+            android:id="@+id/imgThermometer"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:rotation="-45"
-            android:src="@drawable/ic_termometr"
+            android:src="@drawable/ic_thermometer"
             app:layout_constraintEnd_toEndOf="@+id/inputTemperature"
             app:layout_constraintStart_toStartOf="@+id/inputTemperature"
             app:layout_constraintTop_toBottomOf="@+id/inputTemperature" />
@@ -76,8 +76,8 @@
             android:padding="10dp"
             android:src="@drawable/ic_add"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/imgTermometr"
-            app:layout_constraintStart_toStartOf="@+id/imgTermometr"
-            app:layout_constraintTop_toBottomOf="@+id/imgTermometr" />
+            app:layout_constraintEnd_toEndOf="@+id/imgThermometer"
+            app:layout_constraintStart_toStartOf="@+id/imgThermometer"
+            app:layout_constraintTop_toBottomOf="@+id/imgThermometer" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

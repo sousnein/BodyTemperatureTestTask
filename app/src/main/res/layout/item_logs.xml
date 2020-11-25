@@ -33,7 +33,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/txtTemperature"
         app:layout_constraintStart_toEndOf="@+id/txtDate"
         app:layout_constraintTop_toTopOf="@+id/txtTemperature"
-        app:srcCompat="@drawable/ic_termometr" />
+        app:srcCompat="@drawable/ic_thermometer" />
 
     <TextView
         android:id="@+id/txtTemperature"

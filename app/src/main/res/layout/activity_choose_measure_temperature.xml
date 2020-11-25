@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/track_background_gradient"
+    android:layout_height="match_parent"
+    tools:context=".ChooseMeasureTemperature">
+
+    <TextView
+        android:id="@+id/txtTemperatureMeasureQuestion"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="@string/fahrenheit_or_celsius"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/checkerContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="@+id/txtTemperatureMeasureQuestion"
+        app:layout_constraintStart_toStartOf="@+id/txtTemperatureMeasureQuestion"
+        app:layout_constraintTop_toBottomOf="@+id/txtTemperatureMeasureQuestion">
+
+        <ImageView
+            android:id="@+id/imgThermometer"
+            android:layout_width="40dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp"
+            android:rotation="-45"
+            android:src="@drawable/ic_thermometer"
+            app:layout_constraintBottom_toBottomOf="@+id/txtChosenMeasure"
+            app:layout_constraintEnd_toStartOf="@+id/txtChosenMeasure"
+            app:layout_constraintTop_toTopOf="@+id/txtChosenMeasure" />
+
+        <TextView
+            android:id="@+id/txtChosenMeasure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fahrenheit"
+            android:textAlignment="textEnd"
+            android:textColor="@color/red"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/checkerContainer" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--<androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchMeasure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        app:showText="true"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textOn="@string/celsious"
+        android:textOff="@string/fahrenheit"
+        app:switchTextAppearance="@style/SwitchTextAppearance"
+        android:thumb="@drawable/thumb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkerContainer"
+        app:track="@drawable/track" />-->
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/switchMeasure"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="32dp"
+        app:checkedButton="@id/btn_fahrenheit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkerContainer"
+        app:singleSelection="true"
+        app:selectionRequired="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_fahrenheit"
+            style="@style/OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/fahrenheit" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_celsius"
+            style="@style/OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/celsius" />
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <TextView
+        android:id="@+id/txtBtnNext"
+        android:padding="5dp"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/txtBtnNext"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/btn_next_background"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
