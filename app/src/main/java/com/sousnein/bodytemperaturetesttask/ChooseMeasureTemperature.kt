@@ -1,12 +1,10 @@
 package com.sousnein.bodytemperaturetesttask
 
-import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.PreferenceManager
 import androidx.appcompat.app.AppCompatActivity
-import com.sousnein.bodytemperaturetesttask.ui.setColorOfText
 import kotlinx.android.synthetic.main.activity_choose_measure_temperature.*
 
 
@@ -15,6 +13,7 @@ class ChooseMeasureTemperature : AppCompatActivity() {
     private val sharedPreferencesKey = "temperatureMeasure"
     private lateinit var sharedPreferences: SharedPreferences
     private val badValueForSharedPreferences = "unknown"
+    private val prefix = "°"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,30 +32,16 @@ class ChooseMeasureTemperature : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        temperatureMeasure = txtChosenMeasure.text.toString().removePrefix("°")
+        temperatureMeasure = txtChosenMeasure.text.toString().removePrefix(prefix)
 
-        /*switchMeasure.setOnCheckedChangeListener { buttonView, isChecked ->
+        switchMeasure.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked)
                 txtChosenMeasure.text = "°C"
             else
                 txtChosenMeasure.text = "°F"
 
-            temperatureMeasure = txtChosenMeasure.text.toString().removePrefix("°")
-
-        }*/
-        switchMeasure.addOnButtonCheckedListener { group, checkedId, isChecked ->
-            when (checkedId) {
-                R.id.btn_fahrenheit -> {
-                    txtChosenMeasure.text = "°F"
-                }
-                R.id.btn_celsius  -> {
-                    txtChosenMeasure.text = "°C"
-                }
-            }
-            temperatureMeasure = txtChosenMeasure.text.toString().removePrefix("°")
-
+            temperatureMeasure = txtChosenMeasure.text.toString().removePrefix(prefix)
         }
-
 
         txtBtnNext.setOnClickListener {
             saveResult()

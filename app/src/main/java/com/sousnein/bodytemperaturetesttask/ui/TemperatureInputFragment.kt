@@ -32,7 +32,6 @@ class TemperatureInputFragment : BaseFragment() {
 
     override fun onStart() {
         super.onStart()
-        println("start")
         inputTemperature.requestFocus()
         showKeyboard(inputTemperature, activity as Activity)
     }

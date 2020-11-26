@@ -58,6 +58,13 @@ class LogsRecyclerAdapter(private val logs: ArrayList<Log>, db: LogDatabase) :
                 job.cancel()
             }
         }
+        setTextColorDependingOnTemperature(temperature, holder)
+    }
+
+    private fun setTextColorDependingOnTemperature(
+        temperature: Double,
+        holder: LogsViewHolder
+    ) {
         if (TEMPERATURE_MEASURE == "F")
             when (temperature) {
                 in 94.0..99.9 -> {

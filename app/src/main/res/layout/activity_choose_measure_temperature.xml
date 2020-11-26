@@ -47,59 +47,24 @@
             android:layout_height="wrap_content"
             android:text="@string/fahrenheit"
             android:textAlignment="textEnd"
-            android:textColor="@color/red"
+            android:textColor="@color/pink"
             android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/checkerContainer" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!--<androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/switchMeasure"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        app:showText="true"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        android:textOn="@string/celsious"
-        android:textOff="@string/fahrenheit"
-        app:switchTextAppearance="@style/SwitchTextAppearance"
-        android:thumb="@drawable/thumb"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkerContainer"
-        app:track="@drawable/track" />-->
-    <com.google.android.material.button.MaterialButtonToggleGroup
+    <com.sousnein.bodytemperaturetesttask.ui.adapter.SwitchCompatEx
         android:id="@+id/switchMeasure"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="60dp"
-        android:layout_marginEnd="32dp"
-        app:checkedButton="@id/btn_fahrenheit"
+        android:layout_marginEnd="24dp"
+        android:textOn="@string/celsius"
+        android:textOff="@string/fahrenheit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkerContainer"
-        app:singleSelection="true"
-        app:selectionRequired="true">
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_fahrenheit"
-            style="@style/OutlinedButton"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/fahrenheit" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_celsius"
-            style="@style/OutlinedButton"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/celsius" />
-
-    </com.google.android.material.button.MaterialButtonToggleGroup>
+        app:layout_constraintTop_toBottomOf="@+id/checkerContainer" />
 
     <TextView
         android:id="@+id/txtBtnNext"
